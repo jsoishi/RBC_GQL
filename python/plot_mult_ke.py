@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import h5py
 
-curtis = np.loadtxt("eps_0.4_run/fig_kinetic_t.dat")
+curtis = np.loadtxt("fig_kinetic_t_eps0.4.dat")
 
 Lx = 25
 Ly = 25
