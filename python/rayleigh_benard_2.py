@@ -32,7 +32,7 @@ from dedalus.tools  import post
 import logging
 logger = logging.getLogger(__name__)
 
-restart = "checkpoints/checkpoints_s11.h5"
+restart = None #"checkpoints/checkpoints_s11.h5"
 # Parameters
 Lx, Ly, Lz = (25., 25., 1.)
 epsilon = 0.8
@@ -140,7 +140,7 @@ CFL.add_velocities(('u', 'v', 'w'))
 # Flow properties
 flow = flow_tools.GlobalFlowProperty(solver, cadence=10)
 flow.add_property("sqrt(u*u + v*v + w*w) / R", name='Re')
-
+flow.add_property("0.5*(u*u + v*v + w*w)", name='KE')
 # Main loop
 end_init_time = time.time()
 logger.info('Initialization time: %f' %(end_init_time-start_init_time))
@@ -151,7 +151,7 @@ try:
         solver.step(dt)
         if (solver.iteration-1) % 100 == 0:
             logger.info('Iteration: %i, Time: %e, dt: %e' %(solver.iteration, solver.sim_time, dt))
-            logger.info('Max Re = %f' %flow.max('Re'))
+            logger.info('KE = %f; Max Re = %f' %(flow.volume_average('KE'), flow.max('Re')))
 except:
     logger.error('Exception raised, triggering end of main loop.')
     raise
