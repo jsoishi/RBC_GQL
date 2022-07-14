@@ -22,5 +22,5 @@ All data from Curtis Saxton. Text files with two columns: time, Kinetic energy
 
 ## Notes
 * `fingerprint.py` is Curtis's original script. It uses the same equation formulation as the d2 RBC example.
-* `rayleigh_benard_2.py` is my script to reproduce it with our new GQL tools.
+* `rayleigh_benard_GQL.py` is my script to reproduce it **with** GQL tools.
 * Need to use MCNAB2 and a `max_dt` greater that about 1 to reproduce Curtis's fast approach to the straight roll solution
