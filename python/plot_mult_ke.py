@@ -37,7 +37,7 @@ plt.ylabel('KE')
 plt.xlim(0,150)
 plt.ylim(13,13.6)
 plt.legend()
-plt.savefig("mult_KE_vs_t.png",dpi=300)
+plt.savefig("../figs/mult_KE_vs_t.png",dpi=300)
 
 
 
