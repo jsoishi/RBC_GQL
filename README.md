@@ -17,3 +17,8 @@ All data from Curtis Saxton. Text files with two columns: time, Kinetic energy
 * `fig_kinetic_t_eps0.4_L0.dat`: QL at epsilon = 0.4
 * `fig_kinetic_t_eps0.4_L1.dat`: GQL Lambda = 1 at epsilon = 0.4
 * `fig_kinetic_t_eps0.4_L5.dat`: GQL Lambda = 5 at epsilon = 0.4
+
+## Notes
+* `fingerprint.py` is Curtis's original script. It uses the same equation formulation as the d2 RBC example.
+* `rayleigh_benard_2.py` is my script to reproduce it with our new GQL tools.
+* Need to use MCNAB2 and a `max_dt` greater that about 1 to reproduce Curtis's fast approach to the straight roll solution
